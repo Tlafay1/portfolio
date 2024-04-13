@@ -1,14 +1,15 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, PageData } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Portfolio",
+  title: "Timothée Lafay 👨🏻‍💻",
   description: "Ceci est mon portfolio. Vous y trouverez mes projets personnels et mes projets de l'école 42.",
   base: '/portfolio/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Accueil', link: '/' },
+      { text: 'Expériences', link: '/experiences/' },
       { text: 'Projets', link: '/projects/' },
       { text: 'A propos de moi', link: '/about-me' },
     ],
@@ -34,6 +35,16 @@ export default defineConfig({
           ]
         },
       ],
+      '/experiences': [
+        {
+          text: 'Experiences',
+          collapsed: false,
+          items: [
+            { text: 'Stage', link: '/experiences/internship-itd.md' },
+            { text: 'Alternance', link: '/experiences/apprenticeship-itd.md' },
+          ]
+        },
+      ]
     },
 
     socialLinks: [
@@ -48,6 +59,9 @@ export default defineConfig({
     ],
     footer: {
       message: 'Generated using VitePress - <a href="https://github.com/Tlafay1/portfolio" target="_blank"> Source code </a>',
+    },
+    search: {
+      provider: 'local'
     }
   },
   locales: {
@@ -86,17 +100,8 @@ export default defineConfig({
       }
     },
   },
-  // transformPageData(pageData) {
-  //   if (pageData.title === 'Home') {
-  //     return {
-  //       ...pageData,
-  //       title: 'Accueil',
-  //       frontmatter: {
-  //         ...pageData.frontmatter,
-  //         home: true,
-  //       },
-  //     }
-  //   }
-  //   return pageData
-  // }
+  transformPageData(pageData: PageData) {
+    pageData.title = pageData.relativePath.replace(/\.[^/.]+$/, "").split('/').map(elem => { elem = elem.replace(/-/g, " "); return elem.charAt(0).toUpperCase() + elem.slice(1) }).join(' | ');
+    return pageData;
+  }
 })

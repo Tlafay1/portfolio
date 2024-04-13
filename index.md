@@ -3,22 +3,23 @@
 layout: home
 
 hero:
-  name: "Portfolio"
-  text: "Voici mon portfolio incroyable !"
-  tagline: Je suis sûr que ce portfolio sera incroyable !
+  name: "Timothée Lafay"
+  text: "Etudiant en cybersécurité à 42 Lyon"
+  tagline: Le hacking par la positive attitude
+  # image: image-1.png
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Mes expériences
+      link: /experiences/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Mes projets
+      link: /projects/
 
 features:
   - title: Cybersécurité
     details: Mes projets en cybersécurité
     link: /projects/personal/cybersecurity/
-  - title: Projets de 42
+  - title: Projets 42
     details: Mes projets réalisés à 42
     link: /projects/42/
   - title: Projets personnels

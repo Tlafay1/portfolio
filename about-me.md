@@ -1,9 +1,6 @@
----
-title: À propos de moi
-sidebar: false
----
-
 # À propos de moi
+
+![Moi](/tlafay.jpg)
 
 ## Qui suis-je ?
 
