@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Portfolio"
-  text: "This is my awesome portfolio !"
-  tagline: I think this portfolio is gonna be awesome !
+  text: "Voici mon portfolio incroyable !"
+  tagline: Je suis sûr que ce portfolio sera incroyable !
   actions:
     - theme: brand
       text: Markdown Examples
@@ -15,11 +15,13 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Cybersécurité
+    details: Mes projets en cybersécurité
+    link: /projects/personal/cybersecurity/
+  - title: Projets de 42
+    details: Mes projets réalisés à 42
+    link: /projects/42/
+  - title: Projets personnels
+    details: Mes projets personnels
+    link: /projects/personal/
 ---
-
