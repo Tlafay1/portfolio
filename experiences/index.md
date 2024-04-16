@@ -1,5 +1,10 @@
 ---
-layout: doc
+layout: page
+sidebar: false
 ---
 
-# Mes expériences
+<script setup lang="ts">
+    import Graph from '../components/Graph.vue';
+</script>
+
+<Graph />
