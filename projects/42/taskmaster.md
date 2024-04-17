@@ -3,7 +3,6 @@ title: Taskmaster
 tags:
 - python
 - 42
-- taskmaster
 ---
 
 # Taskmaster
