@@ -15,3 +15,5 @@ tags:
 # Bug bounty
 
 # Certifications
+
+Tags: {{ $frontmatter.tags.join(', ') }}

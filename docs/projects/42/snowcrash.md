@@ -9,3 +9,5 @@ tags:
 ---
 
 # Snowcrash
+
+Tags: {{ $frontmatter.tags.join(', ') }}

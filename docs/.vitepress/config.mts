@@ -25,6 +25,8 @@ export default defineConfig({
               text: 'Projets 42', link: '/projects/42/', collapsed: true, items: [
                 { text: 'Taskmaster', link: '/projects/42/taskmaster' },
                 { text: 'Rainfall', link: '/projects/42/rainfall' },
+                { text: 'Snowcrash', link: '/projects/42/snowcrash' },
+
               ],
             },
             {
