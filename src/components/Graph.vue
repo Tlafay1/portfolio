@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toRefs, reactive, watch } from 'vue';
+import { toRefs, reactive, watch, Ref, ref, onMounted } from 'vue';
 import { defineConfigs, EventHandlers, Node, Edge } from 'v-network-graph';
 import {
     ForceLayout,
@@ -10,11 +10,14 @@ import { useData, useRoute, useRouter, withBase } from 'vitepress';
 
 const { isDark } = useData();
 
+const project_color: string = "var(--vp-node-project)";
+const tag_color: string = "var(--vp-node-tag)";
+
 const configs = reactive(
     defineConfigs({
         view: {
             scalingObjects: true,
-            minZoomLevel: 0.5,
+            minZoomLevel: 0.2,
             maxZoomLevel: 5,
             layoutHandler: new ForceLayout({
                 positionFixedByDrag: false,
@@ -32,11 +35,12 @@ const configs = reactive(
         },
         node: {
             normal: {
-                color: node => node.color || "blue",
+                color: node => node.color || project_color,
                 radius: node => node.size,
+
             },
             hover: {
-                color: node => node.color || "blue",
+                color: node => node.color || project_color,
                 radius: node => node.hover === undefined || node.hover === true ? node.size * 1.2 : node.size,
             },
             label: {
@@ -57,11 +61,19 @@ watch(isDark, (newVal) => {
 
 const capitalize = <T extends string>(s: T) => (s[0].toUpperCase() + s.slice(1)) as Capitalize<typeof s>;
 
+interface Project {
+    frontmatter: {
+        title: string;
+        tags?: string[];
+    };
+    url: string;
+}
+
 const props = defineProps({
-    projects: Array
+    projects: Array as () => Project[]
 });
 
-const { projects } = toRefs(props);
+const { projects }: { projects: Ref<Project[]> } = toRefs(props);
 
 const nodes: Record<string, Node> = {};
 
@@ -72,24 +84,24 @@ if (!projects?.value) {
 for (let project of projects.value.filter((project) => project.frontmatter.title !== undefined)) {
     nodes[capitalize(project.frontmatter.title)] = {
         name: capitalize(project.frontmatter.title),
-        color: "blue",
+        color: project_color,
         url: project.url,
         size: 10,
     };
 }
 
-const tagArrays: [][] = projects.value
-    .filter((obj) => obj.frontmatter.tags !== undefined) // Filter objects with arrays
-    .map((obj) => obj.frontmatter.tags!); // Extract and map the arrays
+const tagArrays: string[][] = projects.value
+    .filter((obj) => obj.frontmatter.tags !== undefined)
+    .map((obj) => obj.frontmatter.tags);
 
-const tags = tagArrays.reduce((acc, currentArr) => {
+const tags: string[] = tagArrays.reduce((acc, currentArr) => {
     return [...new Set([...acc, ...currentArr])];
-}, [] as unknown[]);
+}, [] as string[]);
 
 for (let tag of tags) {
-    nodes[capitalize(tag.toString())] = {
-        name: capitalize(tag.toString()),
-        color: "red",
+    nodes[capitalize(tag)] = {
+        name: capitalize(tag),
+        color: tag_color,
         size: 10,
         hover: false
     };
@@ -170,12 +182,10 @@ const eventHandlers: EventHandlers = {
 }
 
 .red-dot {
-    background-color: red;
+    background-color: var(--vp-node-tag);
 }
 
 .blue-dot {
-    background-color: blue;
-    cursor: pointer;
-    /* Make the blue node clickable */
+    background-color: var(--vp-node-project);
 }
 </style>

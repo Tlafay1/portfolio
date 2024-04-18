@@ -68,6 +68,15 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-node-project: var(--vp-c-indigo-1);
+  --vp-node-tag: var(--vp-c-red-1);
+}
+
+
+.dark {
+  --vp-node-project: #018786;
+  --vp-node-tag: #FF6679;
 }
 
 /**
