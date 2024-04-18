@@ -1,4 +1,5 @@
-import { defineConfig, PageData } from 'vitepress'
+import path from 'node:path';
+import { defineConfig, PageData } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -103,5 +104,13 @@ export default defineConfig({
   transformPageData(pageData: PageData) {
     pageData.title = pageData.relativePath.replace(/\.[^/.]+$/, "").split('/').map(elem => { elem = elem.replace(/-/g, " "); return elem.charAt(0).toUpperCase() + elem.slice(1) }).join(' | ');
     return pageData;
-  }
+  },
+  vite: {
+    resolve: {
+      alias: {
+        '@components': path.join(__dirname, '../../src/components'),
+        '@composables': path.join(__dirname, '../../src/composables'),
+      },
+    },
+  },
 })

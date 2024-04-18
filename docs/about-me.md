@@ -1,6 +1,6 @@
 # À propos de moi
 
-![Moi](/tlafay.jpg)
+![Moi](/assets/tlafay.jpg)
 
 ## Qui suis-je ?
 
@@ -26,4 +26,4 @@ Je suis également un grand fan de jeux vidéo et de musique.
 
 ## Mes études
 
-J'ai étudié à l'École 42, une école d'informatique gratuite et ouverte à tous. J'ai appris à programmer en C, à utiliser Git et à travailler en équipe sur des projets de développement logiciel.
+J'étudie à l'École 42, une école d'informatique gratuite et ouverte à tous. J'y apprend à programmer en C, à utiliser Git et à travailler en équipe sur des projets de développement logiciel.

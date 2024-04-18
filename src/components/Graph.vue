@@ -33,9 +33,11 @@ const configs = reactive(
         node: {
             normal: {
                 color: node => node.color || "blue",
+                radius: node => node.size,
             },
             hover: {
                 color: node => node.color || "blue",
+                radius: node => node.hover === undefined || node.hover === true ? node.size * 1.2 : node.size,
             },
             label: {
                 color: isDark.value ? "white" : "black",
@@ -72,6 +74,7 @@ for (let project of projects.value.filter((project) => project.frontmatter.title
         name: capitalize(project.frontmatter.title),
         color: "blue",
         url: project.url,
+        size: 10,
     };
 }
 
@@ -84,7 +87,12 @@ const tags = tagArrays.reduce((acc, currentArr) => {
 }, [] as unknown[]);
 
 for (let tag of tags) {
-    nodes[capitalize(tag.toString())] = { name: capitalize(tag.toString()), color: "red" };
+    nodes[capitalize(tag.toString())] = {
+        name: capitalize(tag.toString()),
+        color: "red",
+        size: 10,
+        hover: false
+    };
 }
 
 const edges: Record<string, Edge> = {};
@@ -92,6 +100,8 @@ const edges: Record<string, Edge> = {};
 for (let project of projects.value) {
     if (project.frontmatter.tags) {
         for (let tag of project.frontmatter.tags) {
+            nodes[capitalize(project.frontmatter.title)].size += 2;
+            nodes[capitalize(tag.toString())].size += 2;
             edges[`${project.frontmatter.title}-${tag}`] = {
                 source: capitalize(project.frontmatter.title),
                 target: capitalize(tag.toString()),
@@ -113,6 +123,16 @@ const eventHandlers: EventHandlers = {
 
 <template>
     <v-network-graph class="graph" :nodes="nodes" :edges="edges" :configs="configs" :event-handlers="eventHandlers" />
+    <div id="legend" class="legend">
+        <span class="legend-item">
+            <span class="blue-dot"></span>
+            <span>Projet (clickable)</span>
+        </span>
+        <span class="legend-item">
+            <span class="red-dot"></span>
+            <span>Tag</span>
+        </span>
+    </div>
 </template>
 
 <style scoped>
@@ -122,5 +142,40 @@ const eventHandlers: EventHandlers = {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+#legend {
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.red-dot,
+.blue-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red-dot {
+    background-color: red;
+}
+
+.blue-dot {
+    background-color: blue;
+    cursor: pointer;
+    /* Make the blue node clickable */
 }
 </style>

@@ -2,7 +2,7 @@
 title: Taskmaster
 tags:
 - python
-- 42
+- linux
 ---
 
 # Taskmaster
