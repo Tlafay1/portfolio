@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Timothée Lafay"
   text: "Etudiant en cybersécurité à 42 Lyon"
-  tagline: Le hacking par la positive attitude
+  tagline: Le hacking avec le sourire !
   # image: image-1.png
   actions:
     - theme: brand
@@ -18,11 +18,11 @@ hero:
 features:
   - title: Cybersécurité
     details: Mes projets en cybersécurité
-    link: /projects/personal/cybersecurity/
+    link: /projects/personal/cyber
   - title: Projets 42
-    details: Mes projets réalisés à 42
+    details: Mon aventure à 42 Lyon
     link: /projects/42/
   - title: Projets personnels
-    details: Mes projets personnels
+    details: Quand je m'ennuie à la maison 
     link: /projects/personal/
 ---
