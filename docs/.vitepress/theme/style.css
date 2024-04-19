@@ -70,12 +70,12 @@
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
   
-  --vp-node-project: var(--vp-c-indigo-1);
-  --vp-node-tag: var(--vp-c-red-1);
+  --vp-node-project: var(--vp-c-indigo-2);
+  --vp-node-tag: var(--vp-c-red-2);
 }
 
 .dark {
-  --vp-c-bg: var(--vp-c-bg);
+  --vp-c-bg: #1b1b1f;
   --vp-node-project: #018786;
   --vp-node-tag: #FF6679;
 }
@@ -85,6 +85,7 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-button-alt-bg: var(--vp-c-default-soft);
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: var(--vp-c-white);
   --vp-button-brand-bg: var(--vp-c-brand-3);

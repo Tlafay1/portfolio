@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { toRefs, reactive, watch, Ref, ref, onMounted } from 'vue';
+import { toRefs, reactive, Ref } from 'vue';
 import { defineConfigs, EventHandlers, Node, Edge } from 'v-network-graph';
 import {
     ForceLayout,
     ForceNodeDatum,
     ForceEdgeDatum,
 } from "v-network-graph/lib/force-layout";
-import { useData, useRoute, useRouter, withBase } from 'vitepress';
-
-const { isDark } = useData();
+import { useRoute, useRouter, withBase } from 'vitepress';
 
 const project_color: string = "var(--vp-node-project)";
 const tag_color: string = "var(--vp-node-tag)";
@@ -44,7 +42,7 @@ const configs = reactive(
                 radius: node => node.hover === undefined || node.hover === true ? node.size * 1.2 : node.size,
             },
             label: {
-                color: isDark.value ? "white" : "black",
+                color: "var(--vp-c-text-1)",
             },
         },
         edge: {
@@ -54,10 +52,6 @@ const configs = reactive(
         },
     })
 );
-
-watch(isDark, (newVal) => {
-    configs.node.label.color = newVal ? "white" : "black";
-});
 
 const capitalize = <T extends string>(s: T) => (s[0].toUpperCase() + s.slice(1)) as Capitalize<typeof s>;
 
