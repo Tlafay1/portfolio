@@ -21,6 +21,7 @@
   "dependencies": {
     "d3-force": "^3.0.0",
     "v-network-graph": "^0.9.15",
-    "vue-gtag": "^2.0.1"
+    "vue-cookie-law": "^1.13.3",
+    "vue-gtag-next": "^1.14.0"
   }
 }
