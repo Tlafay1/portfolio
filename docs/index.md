@@ -26,3 +26,5 @@ features:
     details: Quand je m'ennuie à la maison 
     link: /projects/personal/
 ---
+
+<!-- </CookieConsent> -->

@@ -6,6 +6,7 @@ tags:
 - python
 - cybersécurité
 - devops
+- jenkins
 ---
 
 # Mon alternance chez IT-Development
@@ -29,4 +30,8 @@ Je réalise également des tests d'intrusion réguliers afin de trouver des fail
 
 ### DevSecOps
 
-Je participe à la mise en place de solutions de sécurité pour les applications de l'entreprise. 
+Je participe à la mise en place de solutions de sécurité pour les applications de l'entreprise. Ca se présente notamment sous la forme de pipelines avec Jenkins, 
+
+---
+
+Tags: {{ $frontmatter.tags.join(', ') }}

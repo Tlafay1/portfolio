@@ -6,7 +6,10 @@
             ],
             "@composables/*": [
                 "./src/composables/*"
-            ]
+            ],
+            "@plugins/*": [
+                "./src/plugins/*"
+            ],
         }
     },
 }

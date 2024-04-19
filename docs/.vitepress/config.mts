@@ -120,18 +120,18 @@ export default defineConfig({
       },
     },
   },
-  head: [
-    [
-      'script',
-      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-L6CJHN29W7' }
-    ],
-    [
-      'script',
-      {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-L6CJHN29W7');`
-    ]
-  ]
+  // head: [
+  //   [
+  //     'script',
+  //     { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-L6CJHN29W7' }
+  //   ],
+  //   [
+  //     'script',
+  //     {},
+  //     `window.dataLayer = window.dataLayer || [];
+  //     function gtag(){dataLayer.push(arguments);}
+  //     gtag('js', new Date());
+  //     gtag('config', 'G-L6CJHN29W7');`
+  //   ]
+  // ]
 })

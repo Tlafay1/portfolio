@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "d3-force": "^3.0.0",
-    "v-network-graph": "^0.9.15"
+    "v-network-graph": "^0.9.15",
+    "vue-gtag": "^2.0.1"
   }
 }
