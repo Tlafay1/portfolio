@@ -69,7 +69,12 @@ export default defineConfig({
       message: 'Créé avec VitePress - <a href="https://github.com/Tlafay1/portfolio" target="_blank"> Code source </a>',
     },
     search: {
-      provider: 'local'
+      provider: 'algolia',
+      options: {
+        apiKey: 'fcd7c30ad6914e89808be1e6541bbdc3',
+        indexName: 'tlafay1io',
+        appId: 'KYLBEVKZAL'
+      }
     }
   },
   locales: {
