@@ -73,9 +73,19 @@ export default defineConfig({
       options: {
         apiKey: 'fcd7c30ad6914e89808be1e6541bbdc3',
         indexName: 'tlafay1io',
-        appId: 'KYLBEVKZAL'
+        appId: 'KYLBEVKZAL',
+        sitemaps: [
+          "https://tlafay1.github.io/portfolio/sitemap.xml"
+        ],
+        exclusionPatterns: [
+          "/experiences/",
+          "/projects/"
+        ],
       }
-    }
+    },
+  },
+  sitemap: {
+    hostname: 'https://tlafay1.github.io/portfolio/'
   },
   locales: {
     root: {
