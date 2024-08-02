@@ -48,7 +48,12 @@ export default defineConfig({
           text: 'Experiences',
           collapsed: false,
           items: [
-            { text: 'Stage', link: '/experiences/internship-itd.md' },
+            {
+              text: 'Stage', link: '/experiences/internship-itd.md', collapsed: true, items: [
+                { text: 'IT-Development', link: '/experiences/internship-itd.md' },
+                { text: 'ENE', link: '/experiences/internship-ene.md' },
+              ]
+            },
             { text: 'Alternance', link: '/experiences/apprenticeship-itd.md' },
           ]
         },

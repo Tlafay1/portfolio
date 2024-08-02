@@ -1,6 +1,6 @@
 # À propos de moi
 
-![Moi](/assets/tlafay.jpg)
+![Just my face](/assets/tlafay.jpg)
 
 ## Qui suis-je ?
 
@@ -18,7 +18,7 @@ Je suis également un grand fan de jeux vidéo et de musique.
 
 ## Soft skills
 
-- Flemmard (oui, je considère ça comme une compétence !)
+- Efficace
 - Patient
 - Curieux
 - Autonome

@@ -16,7 +16,7 @@ tags:
 
 ## Description
 
-Je suis actuellement en alternance chez IT-development en tant que DevSecOps. Mon rôle est de participer à la sécurisation des applications web et mobiles de l'entreprise. Pour cela, je réalise des audits de sécurité, des tests d'intrusion et je participe à la mise en place de solutions de sécurité.
+Je suis actuellement en alternance chez IT-development en tant qu'Expert DevSecOps. Mon rôle est de participer à la sécurisation des applications web et mobiles de l'entreprise. Pour cela, je réalise des audits de sécurité, des tests d'intrusion et je participe à la mise en place de solutions de sécurité.
 
 ## L'entreprise :office:
 
@@ -43,7 +43,9 @@ Je participe à la mise en place de solutions de sécurité pour les application
 
 ### Développement
 
-J'ai aussi le role de developpeur (backend principalement), notamment pour regler les problemes lies a la securite du produit, quand ca rentre dans mon domaine de competence. Cela m'a permis de decouvrir le Java (le language que j'aime le plus detester) et le framework Spring Boot. J'ai par exemple pu ameliorer les protections des types de fichiers telecharges par les utilisateurs et corriger des failles de path traversal.
+J'ecris aussi un peu de code (backend principalement), notamment pour regler les problemes lies a la securite du produit, quand ca rentre dans mon domaine de competence. Cela m'a permis de decouvrir le Java (le language que j'aime le plus detester) et le framework Spring Boot. J'ai par exemple pu ameliorer les protections des types de fichiers telecharges par les utilisateurs et corriger des failles de path traversal.
+
+Ca me permet de progresser enormement, parce que je suis convaincu que c'est important de comprendre comment les failles apparaissent pour mieux les detecter !
 
 ---
 
