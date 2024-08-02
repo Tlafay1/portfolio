@@ -1,0 +1,8 @@
+{
+    "features": {
+        "ghcr.io/meaningful-ooo/devcontainer-features/fish": {
+            "fisher": true
+        }
+    },
+    "postCreateCommand": "fish ./.devcontainer/postCreateCommand.fish"
+}
