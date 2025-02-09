@@ -1,8 +1,10 @@
 {
   "type": "module",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.4",
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.29.1",
@@ -10,8 +12,10 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.24.1",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.4",
     "typescript": "^5.4.5",
-    "vitepress": "^1.1.0"
+    "vitepress": "^1.6.3"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -19,9 +23,12 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.4",
     "d3-force": "^3.0.0",
+    "lucide-vue-next": "^0.475.0",
     "v-network-graph": "^0.9.15",
     "vue-cookie-law": "^1.13.3",
-    "vue-gtag-next": "^1.14.0"
+    "vue-gtag-next": "^1.14.0",
+    "vue-vanta-revamp": "^0.1.2"
   }
 }
