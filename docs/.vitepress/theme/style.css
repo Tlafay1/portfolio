@@ -28,7 +28,7 @@
  *   custom containers.
  *
  * - `default`: The color used purely for subtle indication without any
- *   special meanings attched to it such as bg color for menu hover state.
+ *   special meanings attached to it such as bg color for menu hover state.
  *
  * - `brand`: Used for primary brand colors, such as link text, button with
  *   brand theme, etc.
@@ -42,6 +42,9 @@
  * - `danger`: Used to show error, or dangerous message to the users. Used
  *   in custom container, badges, etc.
  * -------------------------------------------------------------------------- */
+
+@import "tailwindcss";
+@config "../../../tailwind.config.js";
 
  :root {
   --vp-c-bg: #ECEFF1;
@@ -75,7 +78,7 @@
 }
 
 .dark {
-  --vp-c-bg: #1b1b1f;
+  --vp-c-bg: var(--vp-c-black);
   --vp-node-project: #018786;
   --vp-node-tag: #FF6679;
 }
