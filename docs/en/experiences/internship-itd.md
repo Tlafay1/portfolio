@@ -43,6 +43,7 @@ These vulnerabilities were found during my penetration tests and were corrected 
 - Privilege escalation
 - XSS
 - CSRF
+-
 
 ---
 
