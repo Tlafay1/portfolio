@@ -3,23 +3,26 @@
 layout: home
 
 hero:
-  name: "Portfolio"
-  text: "This is my amazing portfolio !"
-  tagline: I'm sure this will be amazing !
+  name: "Timothée Lafay"
+  text: "Cybersecurity student at 42 Lyon"
+  tagline: Hacking with a smile!
+  # image: image-1.png
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: My experiences
+      link: /en/experiences/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: My projects
+      link: /en/projects/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    link: /feature-a
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Cybersecurity
+    details: My cybersecurity projects
+    link: /en/projects/personal/cyber
+  - title: 42 Projects
+    details: My adventure at 42 Lyon
+    link: /en/projects/42/
+  - title: Personal projects
+    details: When I'm bored at home
+    link: /en/projects/personal/
 ---
