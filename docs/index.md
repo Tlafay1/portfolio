@@ -4,9 +4,8 @@ layout: home
 
 hero:
   name: "Timothée Lafay"
-  text: "Etudiant en cybersécurité à 42 Lyon"
+  text: "Pentester | Développeur"
   tagline: Le hacking avec le sourire !
-  # image: image-1.png
   actions:
     - theme: brand
       text: Mes expériences
@@ -26,3 +25,11 @@ features:
     details: Quand je m'ennuie à la maison 
     link: /projects/personal/
 ---
+
+<br>
+
+---
+
+<br>
+
+<!--@include: ./about-me.md-->
