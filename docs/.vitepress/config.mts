@@ -140,6 +140,7 @@ export default defineConfig({
       alias: {
         '@components': path.join(__dirname, '../../src/components'),
         '@composables': path.join(__dirname, '../../src/composables'),
+        '@': path.resolve(__dirname, '../../src'),
       },
     },
   },
