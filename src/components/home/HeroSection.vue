@@ -1,8 +1,8 @@
 <template>
-  <main class="container mx-auto grid min-h-screen grid-cols-1 items-center gap-12 px-6 py-24 lg:grid-cols-2 lg:gap-24">
+  <main class="container mx-auto grid min-h-screen grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-24">
       
     <div class="max-w-3xl lg:order-1">
-      <span class="font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+      <span class="font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-300">
         Pentester & Développeur Backend
       </span>
       
@@ -17,11 +17,11 @@
 
       <div class="mt-10 flex flex-wrap gap-4">
         <a href="#projets" 
-           class="rounded-lg bg-teal-500 px-6 py-3 font-semibold text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 dark:text-white dark:focus:ring-offset-zinc-950">
+           class="rounded-lg bg-teal-600 shadow-m px-6 py-3 font-semibold text-white transition-transform duration-200 hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 dark:text-white dark:focus:ring-offset-zinc-950">
           Voir mes projets
         </a>
         <a href="[votre-lien-linkedin]" target="_blank" rel="noopener noreferrer"
-           class="rounded-lg border border-zinc-300 px-6 py-3 font-semibold text-zinc-800 transition-colors duration-200 hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:focus:ring-offset-zinc-950">
+           class="rounded-lg border shadow-l border-zinc-300 px-6 py-3 font-semibold text-zinc-800 transition-colors duration-200 hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:focus:ring-offset-zinc-950">
           Me contacter sur LinkedIn
         </a>
       </div>

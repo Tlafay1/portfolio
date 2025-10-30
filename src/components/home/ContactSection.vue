@@ -1,7 +1,7 @@
 <template>
-  <section class="py-16 sm:py-24" id="contact">
-    <div class="container mx-auto max-w-4xl px-6">
-      <div class="rounded-2xl border border-zinc-200 bg-white p-12 text-center shadow-xl shadow-zinc-200/50 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-teal-900/10">
+  <section class="py-80" id="contact">
+    <div class="container mx-auto max-w-5xl px-6">
+      <div class="rounded-2xl p-12 text-center shadow-s bg-zinc-900">
         <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl">
           Prêt à collaborer ?
         </h2>

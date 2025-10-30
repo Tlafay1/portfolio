@@ -1,6 +1,6 @@
 <template>
-  <section class="py-16 sm:py-24" id="philosophie">
-    <div class="container mx-auto max-w-6xl px-6">
+  <section class="pb-80" id="philosophie">
+    <div class="container mx-auto px-6">
       <h2 class="text-center text-sm font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
         Ma Philosophie
       </h2>

@@ -17,12 +17,12 @@
 
 <script setup lang="ts">
 // On importe les composants de section
-import HeroSection from '@components/home/HeroSection.vue'
-import PhilosophySection from '@components/home/PhilosophySection.vue'
-import ExperiencesSection from '@components/home/ExperiencesSection.vue'
-import ProjectsSection from '@components/home/ProjectsSection.vue'
-import ContactSection from '@components/home/ContactSection.vue'
-import PageFooter from '@components/home/PageFooter.vue'
+import HeroSection from '@/components/home/HeroSection.vue'
+import PhilosophySection from '@/components/home/PhilosophySection.vue'
+import ExperiencesSection from '@/components/home/ExperiencesSection.vue'
+import ProjectsSection from '@/components/home/ProjectsSection.vue'
+import ContactSection from '@/components/home/ContactSection.vue'
+import PageFooter from '@/components/home/PageFooter.vue'
 </script>
 
 <style>
