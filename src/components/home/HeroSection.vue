@@ -3,7 +3,7 @@
       
     <div class="max-w-3xl lg:order-1">
       <span class="font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-300">
-        Pentester & Développeur Backend
+        Pentester & Développeur Fullstack
       </span>
       
       <h1 class="mt-3 text-5xl font-extrabold tracking-tight text-white sm:text-7xl">
@@ -11,18 +11,18 @@
       </h1>
       
       <p class="mt-6 text-xl text-zinc-700 dark:text-zinc-300">
-        Je suis Timothée Lafay, un développeur qui pense comme un attaquant. 
+        Je suis Timothée Lafay, un attaquant qui pense comme un développeur. 
         Je n'identifie pas seulement les failles : je lis le code pour comprendre leur origine et aider vos équipes à construire des applications réellement plus sûres.
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4">
         <a href="#projets" 
            class="rounded-lg bg-teal-600 shadow-m px-6 py-3 font-semibold text-white transition-transform duration-200 hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 dark:text-white dark:focus:ring-offset-zinc-950">
-          Voir mes projets
+          Me contacter
         </a>
         <a href="[votre-lien-linkedin]" target="_blank" rel="noopener noreferrer"
            class="rounded-lg border shadow-l border-zinc-300 px-6 py-3 font-semibold text-zinc-800 transition-colors duration-200 hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:focus:ring-offset-zinc-950">
-          Me contacter sur LinkedIn
+          Voir mes projets
         </a>
       </div>
     </div>

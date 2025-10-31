@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   title: "Timothée Lafay 👨🏻‍💻",
   description: "Ceci est mon portfolio. Vous y trouverez mes projets personnels et mes projets de l'école 42.",
+  appearance: 'force-dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

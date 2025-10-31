@@ -14,17 +14,24 @@
 
   /* --- Palette Principale (Primary) --- */
   /* (Basée sur 'Teal' (Bleu Canard) pour un look "Moderne & Tech") */
-  --color-primary-light: var(--color-teal-400);  /* Plus clair, pour ex. :hover */
-  --color-primary: var(--color-teal-500);        /* Couleur principale */
-  --color-primary-dark: var(--color-teal-600);   /* Plus foncé, pour ex. :active */
-  --color-primary-soft: var(--color-teal-50);    /* Fond très léger */
+  --color-primary-light: var(--color-teal-500);  /* Plus clair, pour ex. :hover */
+  --color-primary: var(--color-teal-600);        /* Couleur principale */
+  --color-primary-dark: var(--color-teal-700);   /* Plus foncé, pour ex. :active */
+  --color-primary-soft: var(--color-teal-950);    /* Fond très léger */
 
-  /* --- Palette Secondaire (Secondary) --- */
+  /* --- Palette Secondaire (Accent) --- */
+  /* (Basée sur 'Rose' pour un accent vibrant) */
+  --color-accent-light: var(--color-rose-300);
+  --color-accent: var(--color-rose-400);
+  --color-accent-dark: var(--color-rose-500);
+  --color-accent-soft: var(--color-rose-950);
+
+  /* --- Palette Neutre (Secondary) --- */
   /* (Basée sur 'Zinc' (Gris Anthracite) pour un look neutre et moderne) */
-  --color-secondary-light: var(--color-zinc-400);
+  --color-secondary-light: var(--color-zinc-300);
   --color-secondary: var(--color-zinc-500);
-  --color-secondary-dark: var(--color-zinc-600);
-  --color-secondary-soft: var(--color-zinc-100); /* Note: 100 est plus clair que 50 pour zinc */
+  --color-secondary-dark: var(--color-zinc-700);
+  --color-secondary-soft: var(--color-zinc-800);
 
   /* --- Palettes Sémantiques (pour les blocs VitePress) --- */
   /* (Standard, pas de changement nécessaire) */
@@ -39,10 +46,10 @@
   --color-warning-soft: var(--color-yellow-50);
   
   /* --- Couleurs de Base (Fond, Texte) --- */
-  --color-bg-light: #ECEFF1; /* (Gris très clair, bleuté - conservé) */
-  --color-bg-dark: #121212;  /* (Noir standard - conservé) */
-  --color-text-light: var(--color-zinc-900); /* (Basé sur le nouveau gris) */
-  --color-text-dark: var(--color-zinc-100);  /* (Basé sur le nouveau gris) */
+  --color-bg-light: #ECEFF1;
+  --color-bg-dark: var(--color-zinc-950);
+  --color-text-light: var(--color-zinc-900);
+  --color-text-dark: var(--color-zinc-100);
 
   --shadow-s: inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
   --shadow-m: inset 0 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;

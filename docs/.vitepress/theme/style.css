@@ -55,17 +55,17 @@
   
   /* --- Remap "Secondary" (Zinc) pour le mode sombre --- */
   /* (On utilise des teintes plus claires de zinc pour le contraste) */
-  --vp-c-default-1: var(--color-zinc-300);
-  --vp-c-default-2: var(--color-zinc-400);
-  --vp-c-default-3: var(--color-zinc-500);
-  --vp-c-default-soft: var(--color-zinc-800); /* Fond léger (plus foncé) */
+  --vp-c-default-1: var(--color-secondary-light);
+  --vp-c-default-2: var(--color-secondary);
+  --vp-c-default-3: var(--color-secondary-dark);
+  --vp-c-default-soft: var(--color-secondary-soft);
   
   /* --- NOUVEAU: Surcharge "Brand" (Teal) pour le mode sombre --- */
   /* (Crucial pour la lisibilité: on inverse la luminosité) */
-  --vp-c-brand-1: var(--color-teal-300);    /* Texte de lien plus clair */
-  --vp-c-brand-2: var(--color-teal-400);    /* Hover bouton */
-  --vp-c-brand-3: var(--color-teal-500);    /* Fond bouton */
-  --vp-c-brand-soft: var(--color-teal-900); /* Fond léger (plus foncé) */
+  --vp-c-brand-1: var(--color-primary-light);    /* Texte de lien plus clair */
+  --vp-c-brand-2: var(--color-primary);    /* Hover bouton */
+  --vp-c-brand-3: var(--color-primary-dark);    /* Fond bouton */
+  --vp-c-brand-soft: var(--color-primary-soft); /* Fond léger (plus foncé) */
 
   --vp-node-project: #018786;
   --vp-node-tag: #FF6679;

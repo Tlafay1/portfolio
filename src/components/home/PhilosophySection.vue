@@ -5,7 +5,7 @@
         Ma Philosophie
       </h2>
       <h2 class="mt-3 text-center text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-        Le contexte est la clé da <span class="text-rose-400">sécurité.</span>
+        Le contexte est la clé de la <span class="text-rose-400">sécurité.</span>
       </h2>
       
       <div class="mt-20 flex flex-col gap-24 md:mt-32 md:gap-32">
@@ -19,9 +19,9 @@
           </div>
           
           <div class="md:col-span-6">
-            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">La Sécurité Adaptée au Monde Réel</h3>
+            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">La Sécurité Adaptée au <span class="text-rose-400">Monde Réel</span></h3>
             <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              La sécurité, c'est bien, protéger votre entreprise, c'est mieux. Je m'assure que mes audits ciblent les risques réels auxquels vous êtes confrontés.
+              La sécurité, c'est bien. Réellement protéger votre entreprise, c'est mieux. Je me concentre sur les <span class="text-rose-400">risques réels</span> auxquels vous êtes confrontés pour vous protéger au mieux.
             </p>
           </div>
         </div>
@@ -29,9 +29,9 @@
         <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
           
           <div class="md:col-span-6">
-            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">Mon Atout : Le Développeur</h3>
+            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">Réconcilier Sécurité et <span class="text-rose-400">Développement</span></h3>
             <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              Fort de mes 65% de développeur, je dialogue avec vos équipes. Je priorise les risques réels en fonction de votre architecture et de vos objectifs business.
+              La sécurité ne s'arrête pas à un rapport. J'accompagne vos équipes de développement pour qu'elles comprennent les vulnérabilités identifiées et intègrent les meilleures pratiques de sécurité <span class="text-rose-400">dès le départ</span>.
             </p>
           </div>
           
@@ -51,9 +51,9 @@
           </div>
 
           <div class="md:col-span-6">
-            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">Mon Objectif : Pragmatique</h3>
+            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">Assurer une Protection <span class="text-rose-400">Durable</span></h3>
             <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              Mon but : transformer chaque audit en une opportunité d'apprentissage, avec des remédiations pragmatiques que vos développeurs peuvent appliquer immédiatement.
+              La sécurité est un marathon, pas un sprint. Je vous aide à mettre en place des processus et des outils pour que la sécurité devienne une partie <span class="text-rose-400">intégrante</span> de votre cycle de développement logiciel.
             </p>
           </div>
         </div>
