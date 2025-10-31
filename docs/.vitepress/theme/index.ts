@@ -6,6 +6,7 @@ import VNetworkGraph from "v-network-graph";
 import VueGtag from "vue-gtag-next";
 
 import "v-network-graph/lib/style.css";
+import './globals.css';
 import './style.css';
 
 export default {

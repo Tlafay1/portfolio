@@ -1,10 +1,12 @@
 import path from 'node:path';
 import { defineConfig, PageData } from 'vitepress';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Timothée Lafay 👨🏻‍💻",
   description: "Ceci est mon portfolio. Vous y trouverez mes projets personnels et mes projets de l'école 42.",
+  appearance: 'force-dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -132,10 +134,14 @@ export default defineConfig({
     return pageData;
   },
   vite: {
+    plugins: [
+      tailwindcss(),
+    ],
     resolve: {
       alias: {
         '@components': path.join(__dirname, '../../src/components'),
         '@composables': path.join(__dirname, '../../src/composables'),
+        '@': path.resolve(__dirname, '../../src'),
       },
     },
   },
