@@ -5,7 +5,7 @@
         Projets Sélectionnés
       </h2>
       <p class="mt-4 text-center text-lg text-zinc-600 dark:text-zinc-400">
-        De la recherche de failles à la construction d'applications.
+        De la recherche de <span class="text-rose-400">failles</span> à la construction <span class="text-primary">d'applications</span>.
       </p>
       
       <Carousel
