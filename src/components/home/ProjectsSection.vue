@@ -84,6 +84,10 @@ import {
   MapIcon
 } from '@heroicons/vue/24/outline'
 
+import og_social_image_bughunters from '../../../docs/assets/og_social_image_bughunters.png';
+import taskmaster from '../../../docs/assets/taskmaster.png';
+import two_ez from '../../../docs/assets/2ez.png';
+
 interface Project {
   id: string;
   title: string;
@@ -103,7 +107,7 @@ const projects: Project[] = [
     tags: ['Pentest Web', 'Google VRP'],
     pageUrl: '/projets/bug-bounty-google',
     linkText: 'Lire le write-up',
-    imageUrl: '/assets/og_social_image_bughunters.png'
+    imageUrl: og_social_image_bughunters
   },
   {
     id: 'projet-42',
@@ -112,7 +116,7 @@ const projects: Project[] = [
     tags: ['Développement', 'Python', 'Unix'],
     pageUrl: '/projets/projet-42',
     linkText: 'Voir le projet',
-    imageUrl: '/assets/taskmaster.png'
+    imageUrl: taskmaster
   },
   {
     id: 'projet-perso',
@@ -121,7 +125,7 @@ const projects: Project[] = [
     tags: ['Python', 'API REST', 'Outil'],
     pageUrl: '/projets/projet-perso',
     linkText: 'Voir le code sur GitHub',
-    imageUrl: '/assets/2ez.png'
+    imageUrl: two_ez
   }
 ]
 </script>

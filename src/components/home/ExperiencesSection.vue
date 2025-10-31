@@ -91,6 +91,8 @@ import {
   MapIcon
 } from '@heroicons/vue/24/outline'
 
+import itd_brand from '../../../docs/assets/itd-brand.png'
+
 interface Experience {
   id: string;
   type: string;
@@ -113,7 +115,7 @@ const experiences: Experience[] = [
     description: "Mon rôle principal était de sécuriser les applications web et mobiles de l'entreprise. J'ai réalisé des audits de sécurité...",
     tags: ['DevSecOps', 'Pentest Web', 'Audit', 'Kubernetes'],
     pageUrl: '/experience/alternance-itd',
-    imageUrl: '/assets/itd-brand.png'
+    imageUrl: itd_brand
   },
   {
     id: 'stage-ene',
@@ -124,7 +126,7 @@ const experiences: Experience[] = [
     description: "Stage de 6 mois axé sur le pentest d'infrastructure. Missions de scan Nmap, recherche de vulnérabilités sur Active Directory...",
     tags: ['Pentest Interne', 'Active Directory', 'Nmap', 'Rapport'],
     pageUrl: '/experience/stage-ene',
-    imageUrl: '/assets/itd-brand.png'
+    imageUrl: itd_brand
   },
   {
     id: 'stage-itd',
@@ -135,7 +137,7 @@ const experiences: Experience[] = [
     description: "Réalisation de tests d'intrusion sur des applications web clientes, identification de vulnérabilités OWASP Top 10...",
     tags: ['Pentest Web', 'OWASP', 'Rapport', 'Remédiation'],
     pageUrl: '/experience/stage-itd',
-    imageUrl: '/assets/itd-brand.png'
+    imageUrl: itd_brand
   }
 ]
 </script>
