@@ -81,7 +81,7 @@ export default defineConfig({
         indexName: 'tlafay1io',
         appId: 'KYLBEVKZAL',
         sitemaps: [
-          "https://tlafay1.github.io/portfolio/sitemap.xml"
+          "https://tlafay.fr/sitemap.xml"
         ],
         exclusionPatterns: [
           "/experiences/",
@@ -91,7 +91,7 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: 'https://tlafay1.github.io/portfolio/'
+    hostname: 'https://tlafay.fr'
   },
   locales: {
     root: {
