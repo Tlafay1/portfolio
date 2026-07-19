@@ -1,5 +1,12 @@
 ---
 title: Mon alternance chez IT-Development
+role: Expert DevSecOps
+company: IT-Development
+type: Alternance
+period: 2023 – 2024
+description: Sécurisation des applications web et mobiles de l'entreprise — tests d'intrusion réguliers, industrialisation de la sécurité dans la CI/CD et correctifs directement dans le code backend.
+image: /covers/exp-itd-alternance.png
+order: 1
 tags:
 - IT-Development
 - pentest
@@ -16,37 +23,30 @@ tags:
 
 ## Description
 
-Je suis actuellement en alternance chez IT-development en tant qu'Expert DevSecOps. Mon rôle est de participer à la sécurisation des applications web et mobiles de l'entreprise. Pour cela, je réalise des audits de sécurité, des tests d'intrusion et je participe à la mise en place de solutions de sécurité.
+J'ai effectué mon alternance chez [IT-Development](https://fr.it-development.com/) en tant qu'Expert DevSecOps. Mon rôle : participer à la sécurisation des applications web et mobiles de l'entreprise, en réalisant des audits de sécurité et des tests d'intrusion, et en mettant en place des solutions de sécurité durables.
 
-## L'entreprise :office:
+## L'entreprise
 
 ![ITD logo](/assets/itd-logo.png)
 
-IT-Development (ITD) est une entreprise de developpement logiciel qui commercialise des solutions innovantes à destination des opérateurs de réseaux mobiles et towercos.
+IT-Development (ITD) est une entreprise de développement logiciel qui commercialise des solutions innovantes à destination des opérateurs de réseaux mobiles et towercos.
 
-L'equipe est principalement composée de développeurs, devops et business analysts et compte environ 50 personnes.
+L'équipe est principalement composée de développeurs, DevOps et business analysts, et compte environ 50 personnes.
 
-## Mes missions :man_technologist:
+## Mes missions
 
 ### Tests d'intrusion
 
-![Pentest meme](/assets/pentest-meme.png)
-
 ITD fait intervenir un auditeur de sécurité externe pour réaliser des tests d'intrusion sur ses applications. Mon rôle est de préparer ces audits, d'accompagner l'auditeur dans l'exploration du produit et de m'assurer de la mise en place des correctifs.
-Je réalise également des tests d'intrusion réguliers afin de trouver des failles de sécurité plus poussées en prenant plus de temps que l'auditeur externe.
+
+Je réalise également des tests d'intrusion réguliers en interne : en y consacrant plus de temps que l'auditeur externe, je peux chercher des failles plus poussées et suivre leur correction dans la durée.
 
 ### DevSecOps
 
-![Shift left meme](/assets/shift-left-meme.png)
-
-Je participe à la mise en place de solutions de sécurité pour les applications de l'entreprise. Le but est d'automatiser au maximum la gestion de la securite, en utilisant des scans de vulnerabilites, des tests d'intrusion automatises et des outils de securite des conteneurs.
+Je participe à l'industrialisation de la sécurité dans le cycle de développement : scans de vulnérabilités automatisés dans la CI/CD (Jenkins), tests d'intrusion automatisés et sécurisation des conteneurs (Kubernetes). L'objectif est que la sécurité ne dépende pas d'une intervention ponctuelle, mais soit intégrée en continu.
 
 ### Développement
 
-J'ecris aussi un peu de code (backend principalement), notamment pour regler les problemes lies a la securite du produit, quand ca rentre dans mon domaine de competence. Cela m'a permis de decouvrir le Java (le language que j'aime le plus detester) et le framework Spring Boot. J'ai par exemple pu ameliorer les protections des types de fichiers telecharges par les utilisateurs et corriger des failles de path traversal.
+J'écris aussi du code, principalement backend, pour corriger moi-même les vulnérabilités quand elles entrent dans mon domaine de compétence. Cela m'a fait découvrir Java et le framework Spring Boot : j'ai par exemple renforcé la validation des types de fichiers téléversés par les utilisateurs et corrigé des failles de path traversal.
 
-Ca me permet de progresser enormement, parce que je suis convaincu que c'est important de comprendre comment les failles apparaissent pour mieux les detecter !
-
----
-
-Tags: {{ $frontmatter.tags.join(', ') }}
+Comprendre comment les failles apparaissent dans le code est, à mon sens, la meilleure façon de les détecter — et c'est exactement ce que cette double casquette pentest/développement me permet de faire.

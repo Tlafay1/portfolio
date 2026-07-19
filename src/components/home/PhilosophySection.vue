@@ -1,69 +1,89 @@
 <template>
   <section class="py-16 sm:py-24" id="philosophie">
-    <div class="container mx-auto px-6">
-      <h2 class="text-center text-sm font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-        Ma Philosophie
-      </h2>
-      <h2 class="mt-3 text-center text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl leading-snug">
-        Votre entreprise est <span class="text-accent">unique</span>, <br>
-        votre <span class="text-accent">protection</span> doit l'être aussi
-      </h2>
-      
-      <div class="mt-20 flex flex-col gap-24 md:mt-32 md:gap-32">
-        
-        <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
-          
-          <div class="md:col-span-6">
-            <div class="overflow-hidden rounded-2xl">
-              <img src="/assets/PENTEST-illustration-Overview.webp" alt="Illustration de l'audit de sécurité" class="h-full w-full object-cover">
-            </div>
-          </div>
-          
-          <div class="md:col-span-6">
-            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">La Sécurité Adaptée au <span class="text-accent">Monde Réel</span></h3>
-            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              La sécurité, c'est bien. Réellement protéger votre entreprise, c'est mieux. Je me concentre sur les <span class="text-accent">risques réels</span> auxquels vous êtes confrontés pour vous protéger au mieux.
-            </p>
-          </div>
-        </div>
+    <div class="container mx-auto max-w-6xl px-6">
+      <p class="text-center text-sm font-semibold uppercase tracking-wider text-teal-400">
+        {{ t.eyebrow }}
+      </p>
+      <h2
+        class="mx-auto mt-3 max-w-3xl text-center text-4xl font-bold leading-snug tracking-tight text-white sm:text-5xl"
+        v-html="t.heading"
+      ></h2>
 
-        <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
-          
-          <div class="md:col-span-6">
-            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">Réconcilier Sécurité et <span class="text-accent">Développement</span></h3>
-            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              La sécurité ne s'arrête pas à un rapport. J'accompagne vos équipes de développement pour qu'elles comprennent les vulnérabilités identifiées et intègrent les meilleures pratiques de sécurité <span class="text-accent">dès le départ</span>.
-            </p>
-          </div>
-          
-          <div class="md:col-span-6 md:order-last">
-            <div class="overflow-hidden rounded-2xl ">
-              <img src="/assets/carbon.png" alt="Illustration d'un extrait de code" class="h-full w-full object-cover">
-            </div>
-          </div>
-        </div>
-        
-        <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
-          
-          <div class="md:col-span-6">
-            <div class="overflow-hidden rounded-2xl">
-              <img src="/assets/devops.webp" alt="Illustration d'une remédiation" class="h-full w-full object-cover">
-            </div>
+      <div class="mt-20 flex flex-col gap-20 md:mt-28 md:gap-28">
+        <div
+          v-for="(item, i) in t.pillars"
+          :key="item.title"
+          class="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16"
+        >
+          <div :class="['overflow-hidden rounded-2xl border border-zinc-800', i % 2 === 1 ? 'md:order-last' : '']">
+            <img :src="item.image" :alt="item.alt" class="aspect-[4/3] w-full object-cover" />
           </div>
 
-          <div class="md:col-span-6">
-            <h3 class="text-3xl font-bold text-zinc-900 dark:text-white">Assurer une Protection <span class="text-accent">Durable</span></h3>
-            <p class="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
-              La sécurité est un marathon, pas un sprint. Je vous aide à mettre en place des processus et des outils pour que la sécurité devienne une partie <span class="text-accent">intégrante</span> de votre cycle de développement logiciel.
-            </p>
+          <div>
+            <h3 class="text-3xl font-bold text-white" v-html="item.title"></h3>
+            <p class="mt-4 text-lg text-zinc-300" v-html="item.text"></p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// Les icônes ne sont plus nécessaires ici
+import { computed } from 'vue';
+import { useData } from 'vitepress';
+
+const { lang } = useData();
+
+const t = computed(() =>
+  lang.value === 'en'
+    ? {
+        eyebrow: 'My philosophy',
+        heading: 'Your company is <span class="text-accent">unique</span>,<br />so should be its <span class="text-accent">protection</span>',
+        pillars: [
+          {
+            image: '/covers/philo-realworld.png',
+            alt: 'Real-world risk',
+            title: 'Security fit for the <span class="text-accent">real world</span>',
+            text: 'Security is good. Actually protecting your company is better. I focus on the <span class="text-accent">real risks</span> you face, to protect you where it matters.',
+          },
+          {
+            image: '/covers/philo-devsec.png',
+            alt: 'Security meets development',
+            title: 'Reconciling security and <span class="text-accent">development</span>',
+            text: "Security doesn't stop at a report. I work with your development teams so they understand the vulnerabilities found and build in best practices <span class=\"text-accent\">from the start</span>.",
+          },
+          {
+            image: '/covers/philo-durable.png',
+            alt: 'Lasting protection',
+            title: 'Building <span class="text-accent">lasting</span> protection',
+            text: 'Security is a marathon, not a sprint. I help you put in place the processes and tools to make it an <span class="text-accent">integral</span> part of your development cycle.',
+          },
+        ],
+      }
+    : {
+        eyebrow: 'Ma philosophie',
+        heading: "Votre entreprise est <span class=\"text-accent\">unique</span>,<br />votre <span class=\"text-accent\">protection</span> doit l'être aussi",
+        pillars: [
+          {
+            image: '/covers/philo-realworld.png',
+            alt: 'Risques réels',
+            title: 'La sécurité adaptée au <span class="text-accent">monde réel</span>',
+            text: "La sécurité, c'est bien. Protéger réellement votre entreprise, c'est mieux. Je me concentre sur les <span class=\"text-accent\">risques réels</span> auxquels vous êtes confronté, pour vous protéger là où ça compte.",
+          },
+          {
+            image: '/covers/philo-devsec.png',
+            alt: 'Sécurité et développement',
+            title: 'Réconcilier sécurité et <span class="text-accent">développement</span>',
+            text: "La sécurité ne s'arrête pas à un rapport. J'accompagne vos équipes de développement pour qu'elles comprennent les vulnérabilités identifiées et intègrent les bonnes pratiques <span class=\"text-accent\">dès le départ</span>.",
+          },
+          {
+            image: '/covers/philo-durable.png',
+            alt: 'Protection durable',
+            title: 'Assurer une protection <span class="text-accent">durable</span>',
+            text: "La sécurité est un marathon, pas un sprint. Je vous aide à mettre en place les processus et les outils pour qu'elle devienne une partie <span class=\"text-accent\">intégrante</span> de votre cycle de développement.",
+          },
+        ],
+      }
+);
 </script>

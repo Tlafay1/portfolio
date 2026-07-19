@@ -1,67 +1,77 @@
 <script setup lang="ts">
-import { ref, Ref, computed } from 'vue';
-import { useState, isTracking } from "vue-gtag-next";
+import { ref, computed, onMounted } from 'vue';
+import { useData } from 'vitepress';
+import { useState } from 'vue-gtag-next';
 
-console.info('Loading cookie consent');
+const STORAGE_KEY = 'user_cookie_consent';
 
-const cookieName = 'user_cookie_consent';
-
-const hasConsented: Ref<boolean> = ref(null);
+const { lang } = useData();
+const consent = ref<string | null>(null);
+const mounted = ref(false);
 
 const { isEnabled } = useState();
 
-const getCookie = () => {
-    const cookieValue = localStorage.getItem(cookieName);
-    if (cookieValue !== null)
-        hasConsented.value = cookieValue === 'accepted';
+const t = computed(() =>
+  lang.value === 'en'
+    ? {
+        message: 'This site uses Google Analytics to measure traffic. No tracking happens unless you accept.',
+        accept: 'Accept',
+        decline: 'Decline',
+      }
+    : {
+        message: 'Ce site utilise Google Analytics pour mesurer son audience. Aucun suivi sans votre accord.',
+        accept: 'Accepter',
+        decline: 'Refuser',
+      }
+);
+
+const showBanner = computed(() => mounted.value && consent.value === null);
+
+const save = (value: 'accepted' | 'declined') => {
+  localStorage.setItem(STORAGE_KEY, value);
+  consent.value = value;
+  isEnabled.value = value === 'accepted';
 };
 
-const setCookie = (value) => {
-    localStorage.setItem(cookieName, value);
-    hasConsented.value = value === 'accepted';
-};
-
-const showBanner = computed(() => hasConsented.value === null);
-
-const acceptCookies = () => {
-    isEnabled.value = true;
-    console.log(isTracking.value);
-    setCookie('accepted');
-};
-
-const declineCookies = () => {
-    isEnabled.value = false;
-    console.log(isTracking.value);
-    setCookie('declined');
-};
-
-getCookie();
-
+onMounted(() => {
+  consent.value = localStorage.getItem(STORAGE_KEY);
+  if (consent.value === 'accepted') isEnabled.value = true;
+  mounted.value = true;
+});
 </script>
 
 <template>
-    <div v-if="showBanner" class="cookie-banner">
-        <p>Ce site utilise google analytics afin d'analyser le trafic de ce site et de comprendre la provenance de nos
-            visiteurs..</p>
-        <div class="buttons">
-            <button @click="acceptCookies">Accept</button>
-            <button @click="declineCookies">Decline</button>
+  <Transition name="consent">
+    <aside v-if="showBanner" class="fixed bottom-4 right-4 left-4 z-50 sm:left-auto sm:max-w-sm" role="dialog" aria-live="polite">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/95 p-4 shadow-xl backdrop-blur">
+        <p class="text-sm text-zinc-300">{{ t.message }}</p>
+        <div class="mt-3 flex gap-2">
+          <button
+            class="rounded-lg bg-teal-600 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-teal-500"
+            @click="save('accepted')"
+          >
+            {{ t.accept }}
+          </button>
+          <button
+            class="rounded-lg border border-zinc-700 px-4 py-1.5 text-sm font-semibold text-zinc-300 transition-colors hover:bg-zinc-800"
+            @click="save('declined')"
+          >
+            {{ t.decline }}
+          </button>
         </div>
-    </div>
+      </div>
+    </aside>
+  </Transition>
 </template>
 
 <style scoped>
-.cookie-banner {
-    /* Add your styles here */
-    background-color: #f1f1f1;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.consent-enter-active,
+.consent-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
-.buttons {
-    display: flex;
-    gap: 1rem;
+.consent-enter-from,
+.consent-leave-to {
+  opacity: 0;
+  transform: translateY(0.5rem);
 }
 </style>

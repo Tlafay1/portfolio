@@ -1,20 +1,31 @@
 /**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ * Point d'entrée CSS unique.
+ * Tailwind est importé une seule fois ici ; la variante `dark:` est pilotée
+ * par la classe `.dark` (posée par VitePress via appearance: 'force-dark'),
+ * jamais par prefers-color-scheme.
  */
-
-/* ... (descriptions des variables) ... */
 
 @import "tailwindcss";
 @config "../../../tailwind.config.js";
-
 @import "./theme.css";
+
+/* Déclaration explicite des fichiers à scanner (les composants sont dans /src,
+   hors de la racine VitePress : l'auto-détection ne les couvre pas de façon fiable). */
+@source "../../../src/**/*.{vue,ts}";
+@source "../../**/*.md";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Mappage de la palette sur les variables VitePress.
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
 
 :root {
   --vp-c-bg: var(--color-bg-light);
   --vp-c-text-1: var(--color-text-light);
 
-  /* --- Mappage de la marque (Primary = Teal) --- */
+  /* --- Marque (Primary = Teal) --- */
   --vp-c-brand-1: var(--color-primary-dark);
   --vp-c-brand-2: var(--color-primary);
   --vp-c-brand-3: var(--color-primary-light);
@@ -24,51 +35,47 @@
   --vp-c-tip-2: var(--vp-c-brand-2);
   --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
-  
-  /* --- Mappage Sémantique (Warning = Yellow) --- */
+
+  /* --- Sémantique (Warning = Yellow) --- */
   --vp-c-warning-1: var(--color-warning-dark);
   --vp-c-warning-2: var(--color-warning);
   --vp-c-warning-3: var(--color-warning-light);
   --vp-c-warning-soft: var(--color-warning-soft);
 
-  /* --- Mappage Sémantique (Danger = Red) --- */
+  /* --- Sémantique (Danger = Red) --- */
   --vp-c-danger-1: var(--color-danger-dark);
   --vp-c-danger-2: var(--color-danger);
   --vp-c-danger-3: var(--color-danger-light);
   --vp-c-danger-soft: var(--color-danger-soft);
 
-  /* --- Mappage par Défaut (Secondary = Zinc) --- */
+  /* --- Neutre (Secondary = Zinc) --- */
   --vp-c-default-1: var(--color-secondary-dark);
   --vp-c-default-2: var(--color-secondary);
   --vp-c-default-3: var(--color-secondary-light);
   --vp-c-default-soft: var(--color-secondary-soft);
 
-  /* (Variables non-mappées, à définir si besoin) */
+  /* --- Nœuds du graphe --- */
   --vp-node-project: var(--vp-c-indigo-2);
   --vp-node-tag: var(--vp-c-red-2);
 }
 
 .dark {
-  /* --- Fond et Texte de base (sombre) --- */
   --vp-c-bg: var(--color-bg-dark);
   --vp-c-text-1: var(--color-text-dark);
-  
-  /* --- Remap "Secondary" (Zinc) pour le mode sombre --- */
-  /* (On utilise des teintes plus claires de zinc pour le contraste) */
+
   --vp-c-default-1: var(--color-secondary-light);
   --vp-c-default-2: var(--color-secondary);
   --vp-c-default-3: var(--color-secondary-dark);
   --vp-c-default-soft: var(--color-secondary-soft);
-  
-  /* --- NOUVEAU: Surcharge "Brand" (Teal) pour le mode sombre --- */
-  /* (Crucial pour la lisibilité: on inverse la luminosité) */
-  --vp-c-brand-1: var(--color-primary-light);    /* Texte de lien plus clair */
-  --vp-c-brand-2: var(--color-primary);    /* Hover bouton */
-  --vp-c-brand-3: var(--color-primary-dark);    /* Fond bouton */
-  --vp-c-brand-soft: var(--color-primary-soft); /* Fond léger (plus foncé) */
 
-  --vp-node-project: #018786;
-  --vp-node-tag: #FF6679;
+  /* Luminosité inversée pour la lisibilité en sombre */
+  --vp-c-brand-1: var(--color-primary-light);
+  --vp-c-brand-2: var(--color-primary);
+  --vp-c-brand-3: var(--color-primary-dark);
+  --vp-c-brand-soft: var(--color-primary-soft);
+
+  --vp-node-project: #14b8a6;
+  --vp-node-tag: #fb7185;
 }
 
 /**
@@ -89,40 +96,6 @@
 }
 
 /**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
-:root {
-  /* --- MODIFIÉ: Le point "Créatif" de votre marque --- */
-  /* (Gradient "Turquoise" (Teal) vers "Corail" (Rose)) */
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    var(--color-teal-400) 30%, /* #2dd4bf */
-    var(--color-rose-400)      /* #fb7185 */
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    var(--color-teal-400) 50%,
-    var(--color-rose-400) 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
-}
-
-/**
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
 
@@ -139,4 +112,16 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/**
+ * Pages graphe : plein écran, sans footer ni scroll.
+ * -------------------------------------------------------------------------- */
+
+.is-graph {
+  overflow: hidden;
+}
+
+.is-graph .VPFooter {
+  display: none;
 }

@@ -2,23 +2,27 @@
 import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import VNetworkGraph from "v-network-graph";
-import VueGtag from "vue-gtag-next";
+import VNetworkGraph from 'v-network-graph';
+import VueGtag from 'vue-gtag-next';
 
-import "v-network-graph/lib/style.css";
-import './globals.css';
+import CookieConsent from '@components/CookieConsent.vue';
+
+import 'v-network-graph/lib/style.css';
 import './style.css';
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
-    return h(DefaultTheme.Layout, null, {})
+    return h(DefaultTheme.Layout, null, {
+      'layout-bottom': () => h(CookieConsent),
+    });
   },
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app }) {
     app.use(VNetworkGraph);
+    // Désactivé par défaut : activé uniquement après consentement (CookieConsent).
     app.use(VueGtag, {
-      isEnabled: true,
-      property: { id: "G-L6CJHN29W7" }
-    })
-  }
-} satisfies Theme
+      isEnabled: false,
+      property: { id: 'G-L6CJHN29W7' },
+    });
+  },
+} satisfies Theme;
